@@ -156,29 +156,18 @@ public class BorrarClientes extends javax.swing.JInternalFrame {
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
        long dni = 0;
         // TODO add your handling code here:
-        //Directorio l1 = FormularioClientes.getDirectorio();
-        Directorio c = new Directorio();
-        //Set<String> tel = c.keySet();
+        Directorio dir = FormularioClientes.getDirectorio();
+
         Cliente cli = new Cliente();
         dni = Integer.parseInt(jtDni.getText());
-        if(c.borrarCliente(dni)==false){
+        
+        if(dir.borrarCliente(dni)==1){
+            
         JOptionPane.showMessageDialog(this, "Cliente Borrado");}
         else {
             JOptionPane.showMessageDialog(this,"No se encontro cliente");
         }
-        //Cliente cli = FormularioClientes.getDirectorio().borrarCliente(dni);
-           /* dni = Integer.parseInt(jtDni.getText());
-            //jtTelefono.setText();
-            jtNombre.setText(cli.getNombre());
-            jtApellido.setText(cli.getApellido());
-            jtCiudad.setText(cli.getCiudad());
-      if (FormularioClientes.getDirectorio().borrarCliente(dni)) {
-          JOptionPane.showMessageDialog(this,"No se encontro cliente");
-      }
-      else {
-          c.borrarCliente(dni);
-          JOptionPane.showMessageDialog(this,"Cliente: "+dni+" borrado");
-      }*/
+    
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed

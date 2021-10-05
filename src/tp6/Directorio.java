@@ -62,7 +62,7 @@ public class Directorio {
         return clientesXCiudad;
     }
     
-    public boolean borrarCliente(long dni) {
+    public int borrarCliente(long dni) {
        TreeMap<String, Cliente> borrarXDni = new TreeMap<>();
         Set<String> claves = clientes.keySet();
        for(String clave:claves) {
@@ -70,10 +70,10 @@ public class Directorio {
         if (c.getDni()==dni) {
             borrarXDni.put(clave, c);
             clientes.remove(clave);
-            return true;
+            return 1;
         }  
     }
-       return false;
+       return 0;
     }
 
     @Override
